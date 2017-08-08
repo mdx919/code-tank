@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- jQuery cdn -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- css -->
+		<style>
+		body {
+			height: 500px;
+		}
+
+		.next {
+			display: none;
+		}
+
+	</style>
+	<!-- javascript -->
+	<script>
+		$(document).ready(function(){
+			var time = 1;
+			setInterval(function(e){
+				time++;
+				// if(time == 2){
+					$('.sc1').attr('src', "sc" + time + ".png");
+					if(time == 13){
+						time = 1;
+					}
+				// }
+				// if(time == 3){
+				// 	$('.sc1').attr('src', "sc3.png");
+
+				// }
+				// if(time == 3){
+				// 	$('.sc1').attr('src', "sc4.png");
+					
+				// }
+				// if(time == 4){
+				// 	$('.sc1').attr('src', "sc5.png");
+					
+				// }
+				// if(time == 5){
+				// 	$('.sc1').attr('src', "sc6.png");
+					
+				// }
+				// if(time == 6){
+				// 	$('.sc1').attr('src', "sc7.png");
+					
+				// }
+				// if(time == 7){
+				// 	$('.sc1').attr('src', "sc8.png");
+					
+				// }
+				// if(time == 8){
+				// 	$('.sc1').attr('src', "sc9.png");
+					
+				// }
+				// if(time == 9){
+				// 	$('.sc1').attr('src', "sc10.png");
+					
+				// }
+				// if(time == 10){
+				// 	$('.sc1').attr('src', "sc11.png");
+					
+				// }
+				// if(time == 11){
+				// 	$('.sc1').attr('src', "sc12.png");
+				
+				// }
+				// if(time == 12){
+				// 	$('.sc1').attr('src', "sc13.png");
+				// 	time = 0;
+				// }
+			}, 500);
+		});
+	</script>
+</head>
+<!-- body -->
+<body>
+	<div class="default">
+		<img src="sc1.png" class="sc1"/>
+	</div>
+	<div>
+		
+	</div>
+</body>
+</html>
