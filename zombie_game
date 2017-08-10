@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- jQuery cdn -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.backgroundpos.js"></script> -->
+
+			<!-- css styling -->
+			<style>
+				body {
+					height: 700px;
+					width: 100%;
+				}
+				
+				.background {
+					background-color: skyblue; 
+					height: 680px;
+				}
+
+				img {
+					width: 100%;
+				}
+
+				.sky {
+					width: 100%;
+					height: 680px;
+				}
+
+				.clouds {
+					position: relative;
+					bottom: 680px;
+				}
+
+				.mountainA {
+					position: relative;
+					bottom: 900px;
+				}
+
+				.mountainB {
+					position: relative;
+					bottom: 1140px;
+				}
+
+				.land {
+					position: relative;
+					bottom: 1190px;
+				}
+
+				.zombiewaking {
+					position: relative;
+					float: right;
+					bottom: 1480px;
+					height: 350px;
+					width: 200px;
+				}
+				.zombie {
+					position: relative;
+					float: right;
+					bottom: 1480px;
+					height: 350px;
+					width: 200px;
+					
+				}
+
+
+			</style>
+
+					<!-- javascript -->
+					<script>
+						$(document).ready(function(){
+							    
+        					// $(".skyimg").animate({backgroundPosition: '-100px 0'});
+    
+							var gamestart = false;
+							var count = 1;
+							setInterval(function(e){
+								
+									$('.waking').attr('src', "zombie/pop" + count + ".png");
+									count++;
+									if(count == 12) {
+										gamestart = true;
+									}
+								
+							}, 1000);
+
+							
+							var time = 1;
+							setInterval(function(e){
+								if(gamestart == true){
+									$('.walk').attr('src', "zombie/Walk" + time + ".png");
+									time++;
+										if(time == 12){
+										time = 0;
+										}
+								}
+							}, 1000);
+							//}
+
+						});
+					</script>
+</head>
+<!-- body of the html -->
+<body>
+	<div class="background">
+		<!-- sky -->
+		<div class="sky">
+			<img src="zombie/Sky.png" class="skyimg">
+		</div>
+		<!-- clouds -->
+		<div class="clouds">
+			<img src="zombie/Clouds.png">
+		</div>
+		<!-- mountainA -->
+		<div class="mountainA">
+			<img src="zombie/MountainA.png">
+		</div>
+		<!-- mountainB -->
+		<div class="mountainB">
+			<img src="zombie/MountainB.png">
+		</div>
+		<!-- land -->
+		<div class="land">
+			<img src="zombie/Land.png">
+		</div>
+		<div class="zombiewaking">
+			<img src="zombie/pop0.png" class="waking">
+		</div>
+		<div class="zombie">
+			<img src="zombie/Walk0.png" class="walk">
+		</div>
+	</div>
+</body>
+</html>
