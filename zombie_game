@@ -10,12 +10,13 @@
 				* {margin: 0; padding: 0;}
 				body {
 					height: 700px;
-					width: 100%;
+					width: 1250px;
 				}
 				
 				.background {
 					background-color: skyblue; 
-					height: 680px;
+					height: 700px;
+					width: 1270px;
 				}
 
 				img {
@@ -23,35 +24,55 @@
 				}
 
 				.sky {
-					width: 100%;
+					width: 1250px;
 					height: 680px;
 				}
 
 				.clouds {
+					height: 500px;
+					width: 1250px;
+					background-image: url("zombie/Clouds.png");
+					background-position: cover;
 					position: relative;
 					bottom: 680px;
+					background-repeat: repeat-x;
 				}
 
 				.mountainA {
+					height: 500px;	
+					width: 100%;
+					background-image: url("zombie/MountainA.png");
+					background-position: cover;
 					position: relative;
-					bottom: 900px;
+					bottom: 740px;
+					background-repeat: repeat-x;
 				}
 
 				.mountainB {
+					height: 500px;	
+					width: 100%;
+					background-image: url("zombie/MountainB.png");
+					background-position: cover;
 					position: relative;
-					bottom: 1140px;
+					bottom: 1100px;
+					background-repeat: repeat-x;
 				}
 
 				.land {
+					height: 500px;	
+					width: 100%;
+					background-image: url("zombie/Land.png");
+					background-position: cover;
 					position: relative;
-					bottom: 1190px;
+					bottom: 1570px;
+					background-repeat: repeat-x;
 				}
 
 				.zombiewaking {
 					position: relative;
 					float: right;
 					margin-right: 200px;
-					bottom: 1480px;
+					bottom: 2220px;
 					height: 350px;
 					width: 200px;
 				}
@@ -63,9 +84,24 @@
 					<script>
 						$(document).ready(function(){
 
-							$('.skyimg').animate({backgroundPosition:"(-20 94)"});
-							    
-        					// $(".skyimg").animate({backgroundPosition: '-100px 0'});
+							// js function for moving the background image
+							// var i = null;
+							// function move() {
+							// 	i++;
+							// 	document.getElementById("clouds").style.backgroundPosition = i +'px';
+							// 	window.setInterval(move, 30);
+
+							// }    
+
+							$(function(){
+    							var x = 0;
+    							setInterval(function(){
+        						x-=1;
+        						$('clouds').css('background-position', x + 'px 0');
+    							}, 10);
+							})
+        					
+        					// zombie waking and walking animation
 							var gamestart = false;
 							var count = 1;
 							
@@ -102,20 +138,20 @@
 			<img src="zombie/Sky.png" class="skyimg">
 		</div>
 		<!-- clouds -->
-		<div class="clouds">
-			<img src="zombie/Clouds.png">
+		<div class="clouds" id="clouds">
+			
 		</div>
 		<!-- mountainA -->
 		<div class="mountainA">
-			<img src="zombie/MountainA.png">
+			
 		</div>
 		<!-- mountainB -->
 		<div class="mountainB">
-			<img src="zombie/MountainB.png">
+
 		</div>
 		<!-- land -->
 		<div class="land">
-			<img src="zombie/Land.png">
+
 		</div>
 		<div class="zombiewaking">
 			<img src="zombie/pop0.png" class="waking">
