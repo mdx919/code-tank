@@ -7,14 +7,13 @@
 		<style>
 		body {
 			height: 500px;
+			
 		}
 
 		img {
-			width: 1500px;
-			height: 700px;
-			text-align: center;
+			width: 100%;
+			height: 800px;
 		}
-
 
 	</style>
 	<!-- javascript -->
@@ -23,22 +22,26 @@
 			var time = 1;
 			setInterval(function(e){
 				time++;
-					$('.sc1').attr('src', "sc" + time + ".png");
-					if(time == 13){
-						time = 1;
-					}
+				// if(time == 2){
+					$('.sc1').attr('src', "scarypic/sc" + time + ".png");
+						if(time == 13){
+							time = 1;
+						}
 			}, 500);
 		});
+		window.onbeforeunload = function () {
+    		return $('.sc1').attr('src', "scarypic.jpg")
+		};
 	</script>
 </head>
 <!-- body -->
 <body>
 	<div class="default">
-		<img src="sc1.png" class="sc1"/>
+		<img src="scarypic/sc1.png" class="sc1"/>
 	</div>
 	<div>
 		<audio controls autoplay loop>
-			<source src="song.mp3" type="audio/mpeg">
+			<source src="scarypic/song.mp3" type="audio/mpeg">
 		</audio>
 	</div>
 </body>
