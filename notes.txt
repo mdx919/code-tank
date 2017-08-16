@@ -1,0 +1,53 @@
+wifi
+AlleyGuest
+
+username: AlleyGuest
+password: beawesome
+
+week 1- HTML
+week 2- javascript
+week 3- native react (ios/android)
+week 4- in class project
+week 5- ruby
+week 6- ruby on rails
+week 7- 
+week 8- ????
+
+HTML tags
+
+jsfiddle.net
+
+position: fixed; --
+
+position: absolute; --
+
+position: relative; --
+
+background-color: red !important; --- this will win no matter what
+
+div:hover {
+	
+}
+
+rgba-- will cause the background to go opaque but not all the elements inside
+
+<div class="box rogue"></div> -- 
+
+z-index: -1; -- layering 
+
+jQuery
+
+$('div').action()
+
+setInterval(function(){
+	
+}, 1000);
+
+react-native
+
+<div>   	  =   <View>
+<p>, <h1>     =   <Text>
+<img>         =   <Image
+
+
+index.js

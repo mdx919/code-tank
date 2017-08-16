@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Montserrat');
+			body {
+				font-family: 'Montserrat', sans-serif;
+			}
+
+			
+
+			* {margin: 0; padding: 0;}
+
+			#page {
+				width: 1000px;
+				margin: 0 auto;
+				margin-top: 80px;
+				border-bottom: 1px solid black;
+				position: relative;
+			}
+
+			#bar {
+				background-color: #080707;
+				height: 60px;
+				width: 100%;
+				border-bottom: 4px solid #f3c8ba;
+
+				position: fixed;
+				top: 0;
+				-webkit-box-shadow: 100%px 5px 5px 1px #080707;
+				box-shadow: 100%px 5px 5px 1px #080707;
+				z-index: 999;
+			}
+
+			#logo {
+				height: 50px;
+				margin-top: 4px;
+				float: left;
+
+			}
+
+			.container {
+				width: 1000px;
+				margin: 0 auto;
+			}
+
+			ul {
+				color: white;
+				font-size: 12px;
+				font-weight: 500;
+				padding-top: 25px;
+				float: left;
+			}
+
+			ul li {
+				display: inline;
+				margin-left: 10px;
+			}
+			
+
+			.secondul {
+				display: inline-block;
+				margin-bottom: 40px;
+			}
+
+			
+			#hover {
+				height: 30px;
+				width: 100px;
+				display: inline-block;
+				text-align: center;
+				margin-bottom: 20px;
+				padding-top: 10px;
+			}
+
+			.nav:hover {
+				background-color: #f3c8ba;
+				color: black;
+				font-weight: 600;
+			}
+
+			.pic1 {
+				width: 1000px;
+			}
+
+			#page h1 {
+				font-size: 35px;
+				position: absolute;
+				bottom: 20px;
+				color: white;
+				background-color: rgba(6,7,6,0.4);
+
+			}
+
+
+			.nav {
+				padding-right: 10px;
+				padding-top: 10px;
+				padding-bottom:10px;
+				padding-left: 10px;
+			}
+
+
+
+			.test {
+				border-right: 0.01px solid #343434;
+
+
+			}
+
+			.page2 {
+				width: 1000px;
+				margin: 0 auto;
+				margin-top: 0;
+			}
+
+			.redblock {
+				height: 500px;
+				width: 200px;
+				float: right;
+				background-color: red;
+			}
+
+			.page2 h1 {
+				font-size: 20px;
+			}
+
+			.page2 p {
+				font-size: 10px;
+			}
+
+			.p2 {
+				font-weight: 700;
+			}
+
+			.container2 {
+				width: 650px;
+				float: left;
+			}
+
+			@media screen and (max-width: 667px) {
+
+
+			.page2 {
+				width: 100%;
+			}
+
+
+			.redblock {
+				display: none;
+			}
+
+			.container2 {
+				width: 100%;
+				float: none;
+			}
+
+			.container2 img {
+				width: 100%;
+			}
+
+			.container2 h1, p {
+				width: 100%;
+			}
+
+			#page{
+				width:100%;
+			}
+			
+			#logo{
+				float:none;
+			}
+			
+			.nav {
+				display: none !important;
+			}
+
+			.container {
+				text-align: center;
+				width: 100%;
+			}
+
+			.pic1 {
+				width: 100%;
+			}
+
+			#page h1 {
+				font-size: 30px;
+			}
+
+			}
+
+		</style>
+	</head>
+
+	<body>
+	<!-- nav bar -->
+		<div id="bar">
+			<div class="container">
+				<img src="logo.png" id="logo"/>
+				<ul>
+					<li class="nav test">DROOLING</li>
+					<li class="nav test">NEED THIS</li>
+					<li class="nav test">STAR STRUCK</li>
+					<li class="nav ">DONT JUDGE</li>
+				</ul>
+			</div>
+		</div>
+		<!-- page 1 -->
+		<div id="page">
+			<img src="pic1.jpg" class="pic1">
+			<h1>KENDALL FLAUNTS HER HOODIE WHILE HIKING IN MALIBU!</h1>
+		</div>
+
+		<!-- page 2 -->
+		<div class="page2">
+			<div class="container2">
+				<h1>AWW! BEYONCE'S ANNIVERSARY PRESENT TO JAY Z IS BEYOND ADORABLE!</h1>
+				<p>NEED THIS</p>
+				<p class="p2">BY ALAN GOLDMAN APRIL, 05TH 3PM</p>
+				<img src="beyonce.jpg">
+
+			</div>
+			<div class="redblock">
+				
+			</div>
+
+		</div>
+
+	</body>
+</html>
