@@ -1,0 +1,249 @@
+index.ios.js
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+
+} from 'react-native';
+
+import {
+  StackNavigator,
+} from 'react-navigation';
+
+
+import Login from './Login';
+import Register from './Register';
+import Forgot from './Forgot';
+
+
+const firstapp = StackNavigator({
+  Login: {screen: Login},
+  Register: {screen: Register},
+  Forgot: {screen: Forgot},
+ 
+})
+
+
+
+
+AppRegistry.registerComponent('firstapp', () => firstapp);
+// export default class firstapp extends Component {
+
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <Text style={styles.welcome}>
+//           Welcome to React Native!
+//         </Text>
+//         <Text style={styles.instructions}>
+//           To get started, edit index.ios.js
+//         </Text>
+//         <Text style={styles.instructions}>
+//           Press Cmd+R to reload,{'\n'}
+//           Cmd+D or shake for dev menu
+//         </Text>
+//       </View>
+//     );
+//   }
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#F5FCFF',
+//   },
+//   welcome: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     margin: 10,
+//   },
+//   instructions: {
+//     textAlign: 'center',
+//     color: '#333333',
+//     marginBottom: 5,
+//   },
+// });
+
+Login.js
+
+import React, { Component } from 'react';
+import {
+  View,
+  TouchableHighlight,
+  Text,
+  StyleSheet,
+  TextInput,
+} from 'react-native';
+
+	export default class Login extends React.Component {
+		static navigationOptions = {
+			title: "log in"
+		}
+
+		constructor(props) {
+			super(props);
+			this.state = {
+				email:"",
+				password:""
+			}
+		}
+
+		login(){
+			firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then(user => {
+				user.sendEmailVerification();
+			}).catch(function(e){
+				alert(e.message);
+			})
+		}
+
+		linker(where){
+			this.props.navigation.navigate(where);
+		}
+
+		render() {
+			return(
+			<View style={styles.wrap}>
+
+				<Text style={styles.email}>Email</Text>
+				<TextInput style={styles.emailinput}
+				onChangeText={(email) => this.setState({email})}
+				keyboardType={"email-address"}
+				placeholder={"Enter email address"}
+				/>
+
+				<Text style={styles.password}>password</Text>
+				<TextInput style={styles.passinput}
+				onChangeText={(password) => this.setState({password})}
+				secureTextEntry={true}
+				placeholder={"Enter password"}
+				/>
+
+				<TouchableHighlight onPress={this.login.bind(this)}>
+						<View style={styles.loginbutton}>
+							<Text>Login</Text>
+						</View>
+				</TouchableHighlight>
+			</View>
+			)
+		}
+	}
+
+	const styles = StyleSheet.create({
+
+		wrap: {
+			flex: 1,
+			justifyContent: "center",
+			alignItems: "center",
+		},
+
+		email: {
+			fontSize: 20,
+		},
+
+		emailinput: {
+			backgroundColor: "gray",
+			height: 30,
+			width: 200,
+			alignItems: "center",
+		},
+
+		password: {
+			fontSize: 20,
+		},
+
+		passinput: {
+			backgroundColor: "gray",
+			height: 30,
+			width: 200,
+			alignItems: "center",
+		},
+
+		loginbutton: {
+			backgroundColor: "gray",
+			height: 30,
+			width: 60,
+			justifyContent: "center",
+			alignItems: "center",
+			marginTop: 10,
+
+		}
+
+
+
+	})
+
+Register.js
+
+import React, { Component } from 'react';
+import {
+  View,
+  TouchableHighlight
+
+} from 'react-native';
+
+	export default class Register extends React.Component {
+		static navigationOptions = {
+			title: "Forgot"
+		}
+
+		linker(where){
+			this.props.navigation.navigate(where);
+		}
+
+		render() {
+			return(
+			<View>
+					<TouchableHighlight onPress={this.linker.bind(this, "Register")}>
+						<View style={{height:40,width:50,backgroundColor:"red"}}>
+							<Text>Register</Text>
+						</View>
+					</TouchableHighlight>
+			</View>
+			)
+		}
+	}
+  
+  Forgot.js
+  
+  import React, { Component } from 'react';
+import {
+  View,
+  TouchableHighlight,
+  Text,
+  StyleSheet,
+} from 'react-native';
+
+	export default class Forgot extends React.Component {
+		static navigationOptions = {
+			title: "Forgot"
+		}
+
+		linker(where){
+			this.props.navigation.navigate(where);
+		}
+
+		render() {
+			return(
+			<View>
+				<TouchableHighlight onPress={this.linker.bind(this, "Forgot")}>
+					<View style={{height:40,width:50,backgroundColor:"red"}}>
+						<Text >Log In</Text>
+					</View>
+				</TouchableHighlight>
+			</View>
+			)
+		}
+	}
+
+	const styles = StyleSheet.create({
+
+
+
+	})
