@@ -80,7 +80,7 @@
 					bottom: 0;
 					height: 350px;
 					width: 200px;
-					z-index: 500;
+					z-index: 999;
 
 				}
 
@@ -105,8 +105,32 @@
 					<script>
 						$(document).ready(function(){
 							
-						
+						//detects the collsion of zombie and rockets
+						var collisiondetected = false;
 
+						function getPositionsOfZombie(object1) {
+	    					var pos 		= object1.position();
+	    					return [pos.left];
+    					};
+
+    					function getPositionsOfRocket(object2) {
+	    					var pos 		= object2.position();
+	    					var width 		= object2.width();
+	    					return [pos.left + width];
+    					};
+
+    					function detectCollision(){
+    						var zombie1 	= document.getElementsByClassName('zombiewaking')[0];
+    						var pos1 		= getPositionsOfZombie(zombie1);
+    						var rocket1		= document.getElementsByClassName('rocket')[0];
+    						var pos2 		= document.getPositionsOfRocket(rocket1);
+    						
+    						if (pos2 > pos1){
+    							collisiondetected = true;
+    						}
+
+    						
+    					};
 
 							// clouds moving
 							(function conveyorLoop() {
@@ -117,13 +141,26 @@
 		       					
 							var time1 = 0;
 							setInterval(function(e){
-							time1++;
-							$('.rocketfire').attr('src', "zombie/rocket" + time1 + ".png");
-							if(time1 == 2){
-							time1 = 0;
-							}
+								time1++;
+								$('.rocketfire').attr('src', "zombie/rocket" + time1 + ".png");
+									if(time1 == 2){
+										time1 = 0;
+									}
 
 							}), 5000;
+
+							//rocket exploding
+							var x = 0;
+							setInterval(function(e){
+								if (collisiondetected == true){
+									$('.rocketfire').attr('src', "zombie/x" + x + ".png");
+									x++;
+									if (x == 7){
+										alert("Game Over!!!");
+									}
+								}
+
+							}), 5000; 
 
         					// zombie waking and walking animation
         					
@@ -168,7 +205,7 @@
 								
 							}, 500);
 
-							
+							//zombiw starts walking after gamestart = true
 							var time = 0;
 							setInterval(function(e){
 								if(gamestart == true){
@@ -178,6 +215,8 @@
 										time = 0;
 										}
 
+
+
 								}
 							}, 100);
 
@@ -185,18 +224,7 @@
 
 						});
 						
-						//detects the collsion of zombie and rockets
-						function zombieFunction() {
-    					var testDiv = document.queryselector('.zombie');
-    					zombieoffset = testDiv.offsetLeft
-    					return zombieoffset;
-    					};
 
-    					alert(zombieFunction);
-
-
-
-</script>
 							
 					</script>
 </head>
